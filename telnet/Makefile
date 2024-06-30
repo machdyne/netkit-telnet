@@ -6,8 +6,8 @@ include ../MRULES
 #CXXFLAGS:=$(patsubst -O2, -g, $(CXXFLAGS))
 
 # -DAUTHENTICATE
-CXXFLAGS += -DUSE_TERMIO -DKLUDGELINEMODE
-LIBS += $(LIBTERMCAP)
+CXXFLAGS += -DUSE_TERMIO -DKLUDGELINEMODE -Wl,--copy-dt-needed-entries
+LIBS += $(LIBTERMCAP) -lsupc++
 
 SRCS = commands.cc main.cc network.cc ring.cc sys_bsd.cc telnet.cc \
 	terminal.cc tn3270.cc utilities.cc genget.cc environ.cc netlink.cc
