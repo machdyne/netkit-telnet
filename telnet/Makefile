@@ -7,7 +7,7 @@ include ../MRULES
 
 # -DAUTHENTICATE
 CXXFLAGS += -DUSE_TERMIO -DKLUDGELINEMODE -Wl,--copy-dt-needed-entries
-LIBS += $(LIBTERMCAP) -lsupc++
+LIBS += $(LIBTERMCAP) -static-libstdc++
 
 SRCS = commands.cc main.cc network.cc ring.cc sys_bsd.cc telnet.cc \
 	terminal.cc tn3270.cc utilities.cc genget.cc environ.cc netlink.cc
